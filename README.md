@@ -1,4 +1,4 @@
-# 📒 Gestor de Contactos
+# Gestor de Contactos
 
 Aplicación web desarrollada con React que permite administrar una lista
 de contactos.\
