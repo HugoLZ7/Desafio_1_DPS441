@@ -1,5 +1,5 @@
 [
-  { "id": 1, "nombre": "Carlos", "apellido": "Perez", "telefono": "7777-1111" },
-  { "id": 2, "nombre": "Ana", "apellido": "Lopez", "telefono": "7777-2222" },
-  { "id": 3, "nombre": "Luis", "apellido": "Martinez", "telefono": "7777-3333" }
+  { "id": 1, "nombre": "Carlos", "apellido": "Perez", "telefono": "7777-1111", "favorito": false },
+  { "id": 2, "nombre": "Ana", "apellido": "Lopez", "telefono": "7777-2222", "favorito": false },
+  { "id": 3, "nombre": "Luis", "apellido": "Martinez", "telefono": "7777-3333", "favorito": false }
 ]
