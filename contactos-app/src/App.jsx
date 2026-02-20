@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import contactsData from "./data/contacts.json";
+import { Navbar } from "./components/Navbar";
+import { ContactForm } from "./components/ContactForm";
+import { ContactList } from "./components/ContactList";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [contacts, setContacts] = useState(contactsData);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="min-h-screen w-full bg-gray-100">
+      <Navbar />
+
+      {/* Contenedor centrado y responsivo */}
+      <main className="w-full min-h-[calc(100vh-80px)] flex justify-center items-start px-4 py-8">
+        <div
+          className="
+          w-full 
+          max-w-6xl 
+          flex 
+          flex-col 
+          lg:flex-row 
+          gap-10 
+          items-start 
+          justify-center
+        "
+        >
+          {/* Formulario */}
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <ContactForm contacts={contacts} setContacts={setContacts} />
+          </div>
+
+          {/* Lista de contactos */}
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <ContactList contacts={contacts} />
+          </div>
+        </div>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
