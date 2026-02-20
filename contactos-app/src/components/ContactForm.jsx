@@ -18,6 +18,8 @@ export const ContactForm = ({ contacts, setContacts }) => {
     return numbers;
   };
 
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -67,6 +69,7 @@ export const ContactForm = ({ contacts, setContacts }) => {
       nombre,
       apellido,
       telefono,
+      favorito: false, // Favorito por defecto
     };
 
     setContacts([newContact, ...contacts]);

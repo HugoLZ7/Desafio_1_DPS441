@@ -1,4 +1,4 @@
-export const Contact = ({ contact }) => {
+export const Contact = ({ contact, toggleFavorite}) => {
   const color = `hsl(${contact.nombre.length * 50}, 70%, 60%)`;
 
   return (
@@ -15,6 +15,17 @@ export const Contact = ({ contact }) => {
           {contact.nombre} {contact.apellido}
         </p>
         <p className="text-sm text-gray-500">{contact.telefono}</p>
+      </div>
+
+      {/* Usuarios favoritos */}
+      <div className="flex gap-2">
+        <button
+          onClick={() => toggleFavorite(contact.id)}
+          className="text-yellow-500 font-bold"
+        >
+          {contact.favorito ? "★" : "☆"}
+        </button>
+
       </div>
     </div>
   );
