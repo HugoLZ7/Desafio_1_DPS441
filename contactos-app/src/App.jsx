@@ -27,6 +27,11 @@ function App() {
     );
   };
 
+    const deleteContact = (id) => {
+    if (window.confirm("¿Estás seguro de que deseas eliminar este contacto?")) {
+      setContacts(contacts.filter((contact) => contact.id !== id));
+    }
+  };
 
   return (
     <div className="min-h-screen w-full bg-gray-100">
@@ -48,17 +53,18 @@ function App() {
         >
           {/* Formulario */}
           <div className="w-full lg:w-1/2 flex justify-center">
-            <ContactForm 
-            contacts={contacts} 
-            setContacts={setContacts}
+            <ContactForm
+              contacts={contacts}
+              setContacts={setContacts}
             />
           </div>
 
           {/* Lista de contactos */}
           <div className="w-full lg:w-1/2 flex justify-center">
             <ContactList
-            contacts={contacts}
-            toggleFavorite={toggleFavorite}
+              contacts={contacts}
+              toggleFavorite={toggleFavorite}
+              deleteContact={deleteContact} 
             />
           </div>
         </div>
