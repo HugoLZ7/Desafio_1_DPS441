@@ -1,6 +1,6 @@
 import { Contact } from "./Contact";
 
-export const ContactList = ({ contacts, toggleFavorite}) => {
+export const ContactList = ({ contacts, toggleFavorite, deleteContact}) => {
 
   // Ordenar favoritos al inicio
   const sortedContacts = [...contacts].sort((a, b) => {
@@ -14,13 +14,18 @@ export const ContactList = ({ contacts, toggleFavorite}) => {
         Contactos
       </h2>
 
-      {sortedContacts.map((contact) => (
+      {sortedContacts.length === 0 ? (
+        <p className="text-gray-400 italic">No hay contactos guardados.</p>
+      ) : (
+      sortedContacts.map((contact) => (
         <Contact
           key={contact.id}
           contact={contact}
           toggleFavorite={toggleFavorite}
+          deleteContact={deleteContact}
         />
-      ))}
+      ))
+    )}
     </div>
   );
 };
